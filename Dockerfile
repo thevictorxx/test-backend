@@ -15,6 +15,7 @@ RUN npm ci --only=production
 COPY . .
 
 # Expose port
+ENV PORT=3001
 EXPOSE 3001
 
 # Start command
