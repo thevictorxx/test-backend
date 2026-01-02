@@ -5,6 +5,7 @@ Una aplicación básica de backend construida con Node.js y Express.
 ## Requisitos Previos
 
 - Node.js instalado en tu sistema.
+- Docker (opcional, para despliegue).
 
 ## Instalación
 
@@ -26,7 +27,7 @@ Para ejecutar la aplicación en modo desarrollo con recarga automática (usando 
 npm run dev
 ```
 
-### Modo Producción
+### Modo Producción Local
 
 Para ejecutar la aplicación normalmente:
 
@@ -34,8 +35,25 @@ Para ejecutar la aplicación normalmente:
 npm start
 ```
 
+### Docker / Dokploy
+
+El proyecto incluye configuración para Docker.
+
+**Usando Docker Compose:**
+
+```bash
+docker-compose up -d --build
+```
+
+**Para Dokploy:**
+
+1.  Asegúrate de que tu repositorio tenga el `Dockerfile` y `docker-compose.yml`.
+2.  En Dokploy, selecciona el tipo de despliegue "Docker" o "Docker Compose".
+3.  Configura las variables de entorno si es necesario.
+4.  Despliega.
+
 La aplicación se iniciará en `http://localhost:3000`.
 
 ## Endpoints Disponibles
 
-- `GET /`: Retorna "Hello World!".
+- `GET /`: Retorna un mensaje JSON.

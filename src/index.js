@@ -1,6 +1,7 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 4000;
 
 app.get('/', (req, res) => {
   res.json({
@@ -11,6 +12,6 @@ app.get('/', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Aplicación en puerto ${PORT}`);
+app.listen(port, () => {
+  console.log(`Aplicación en puerto ${port}`);
 });
