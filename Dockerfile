@@ -1,22 +1,8 @@
-# Base image
 FROM node:20-alpine
-
-# Set working directory
 WORKDIR /app
-
-# Copy package files
 COPY package*.json ./
-
-# Install dependencies
-# ci is better for reproducible builds in production
-RUN npm ci --only=production
-
-# Copy source code
+RUN npm install
 COPY . .
-
-# Expose port
-ENV PORT=3001
-EXPOSE 80
-
-# Start command
+ENV PORT=3000
+EXPOSE 3000
 CMD ["npm", "start"]

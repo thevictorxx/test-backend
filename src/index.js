@@ -13,7 +13,8 @@ app.get('/', (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log("Cambio N°1")
-  console.log(`Aplicación en puerto ${port}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, "0.0.0.0", () => {
+  console.log("Cambio N°2")
+  console.log(`App listening on ${PORT}`);
 });
